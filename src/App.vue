@@ -16,7 +16,7 @@ export default {
 
       if (this.originalURL.startsWith("https:") || this.originalURL.startsWith("http:")) {
 
-        const response = await fetch("http://localhost:3000/api/shorten", {
+        const response = await fetch("https://shorturl-generate.onrender.com/api/shorten", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default {
     },
     async fetchdata() {
       try {
-        const response = await fetch('http://localhost:3000/api/short');
+        const response = await fetch('https://shorturl-generate.onrender.com/api/short');
 
         if (!response.ok) {
           throw new Error('ไม่สามารถเรียกข้อมูลได้');
@@ -50,7 +50,7 @@ export default {
 
     async sendShortURLToQRCodeAPI() {
       try {
-        const response = await fetch("http://localhost:3000/api/qrcode/" + this.generatedShortURL, {
+        const response = await fetch("https://shorturl-generate.onrender.com/api/qrcode/" + this.generatedShortURL, {
           method: "GET",
         });
 
