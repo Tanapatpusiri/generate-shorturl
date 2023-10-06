@@ -1,7 +1,7 @@
 # short-url
 
 เมื่อ Clone Project เเล้ว 
-เปิด terminal
+ เปิด terminal
 # ให้พิมพฬคำสั่ง
 - npm install
 - npm run start (หากไม่ได้ใช้  node server.js)
