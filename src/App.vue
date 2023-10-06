@@ -123,7 +123,7 @@ export default {
                     {{ url.originalURL }}
                   </td>
                   <td class="py-2 px-4 text-center">
-                    <a :href="'http://localhost:3000/' + url.shortURL"
+                    <a :href="'https://shorturl-generate.onrender.com/' + url.shortURL"
                       class="text-blue-500 hover:underline pl-4 md:pl-1">{{ url.shortURL }}</a>
                   </td>
                   <td class="py-2 px-4 text-center">
