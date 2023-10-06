@@ -4,5 +4,5 @@
  เปิด terminal
 # ให้พิมพฬคำสั่ง
 - npm install
-- npm run start (หากไม่ได้ใช้  node server.js)
+- npm run start (หากใช้งานไม่ได้ ใช้ node server.js แทน)
 - npm run dev
