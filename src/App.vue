@@ -93,7 +93,7 @@ export default {
               class=" flex justify-center text-xl">Download QR Code</a>
           </div>
           <p v-if="shortURL" class="mt-4 bg-green-100 px-4 py-2 rounded-lg">
-            <strong>Short URL:</strong> <a :href="'http://localhost:3000/' + shortURL" class="text-green-600">{{ shortURL
+            <strong>Short URL:</strong> <a :href="'https://shorturl-generate.onrender.com/' + shortURL" class="text-green-600">{{ shortURL
             }}</a>
           </p>
         </div>
