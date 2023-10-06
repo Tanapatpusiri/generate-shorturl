@@ -30,8 +30,10 @@ export default {
         const data = await response.json();
         this.shortURL = data.shortURL;
         this.generatedShortURL = data.shortURL;
-      } else {
+      } else if ( this.originalURL.startsWith("www.")) {
         // ถ้าไม่ขึ้นต้นด้วย "https:" หรือ "http:" ให้แสดงอัลเลิร์ต
+        alert("Please Input Full URL again");
+      } else{
         alert("Please Input URL again");
       }
     },
@@ -107,48 +109,46 @@ export default {
         </div>
       </div>
 
-      <!-- <div class="container mx-auto">
-        <h1 class="text-center text-3xl font-bold text-white mb-6">QR CODE</h1>
-        <div class="mt-5 bg-white p-6 ml-1 rounded-lg shadow-lg">
-          <form>
-            <div class="flex justify-center space-x-4">
-              <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">Generate
-                QRCODE</button>
-            </div>
-          </form>
-        </div>
-      </div> -->
+
 
       <div class="bg-blue-500 min-h-screen py-10">
         <div class="container mx-auto">
           <h1 class="text-center text-4xl font-bold text-white mb-6">History</h1>
-          <div class="mt-5 bg-white p-6 ml-1 rounded-lg shadow-lg">
+          <div class="mt-5 bg-white  p-6 ml-1 rounded-lg shadow-lg">
             <form @submit.prevent="fetchdata">
               <div class="flex justify-center">
                 <button type="submit"
-                  class=" px-4 py-2 bg-blue-500 hover:bg-blue-600  rounded-lg mb-5 text-white  ">History Short
+                  class=" px-4 py-2 bg-blue-500 hover:bg-blue-600  rounded-lg mb-5  text-white  ">History Short
                   URL</button>
               </div>
             </form>
-            <table class="table border-collapse w-full">
-              <thead>
-                <tr class="bg-gray-300">
-                  <th class="py-2 px-4">Original URL</th>
-                  <th class="py-2 px-4">Short URL</th>
-                  <th class="py-2 px-4">Click Count</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="url in urls" :key="url.id" class="border-b">
-                  <td class="py-2 px-4">{{ url.originalURL }}</td>
-                  <td class="py-2 px-4">
-                    <a :href="'http://localhost:3000/' + url.shortURL"
-                      class="text-blue-500 hover:underline pl-4 md:pl-72">{{ url.shortURL }}</a>
-                  </td>
-                  <td class="py-2 px-4 pl-4 md:pl-1 ">{{ url.clickCount }}</td>
-                </tr>
-              </tbody>
-            </table>
+            <table class="table table-auto border-collapse w-full">
+  <thead>
+    <tr class="bg-gray-300">
+      <th class="py-2 px-4 w-1/3 ">Original URL</th>
+      <th class="py-2 px-4 w-1/3 ">Short URL</th>
+      <th class="py-2 px-4 w-1/3 ">Click Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="url in urls" :key="url.id" class="border-b">
+      <td class="py-2 px-4 "> <!-- เอาออก class "w-1/3" -->
+        {{ url.originalURL }}
+      </td>
+      <td class="py-2 px-4 text-center"> <!-- เอาออก class "w-1/3" -->
+        <a :href="'http://localhost:3000/' + url.shortURL"
+          class="text-blue-500 hover:underline pl-4 md:pl-1">{{ url.shortURL }}</a>
+      </td>
+      <td class="py-2 px-4 text-center"> <!-- เอาออก class "w-1/3" -->
+        {{ url.clickCount }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
           </div>
         </div>
       </div>
@@ -162,8 +162,9 @@ export default {
 .box {
   width: 1550px;
 }
-th {
-    width: 100px; /* กำหนดความกว้างของหัวข้อตามที่คุณต้องการ */
+td {
+    width: 50px; /* กำหนดความกว้างของหัวข้อตามที่คุณต้องการ */
+   
   }
 </style>
 
