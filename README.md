@@ -1,29 +1,18 @@
-# short-url
+# Short-url 
 
-This template should help get you started developing with Vue 3 in Vite.
+โปรเจ็กต์สร้าง Short URL ด้วยภาษา JavaScript บน Node.js
 
-## Recommended IDE Setup
+## คุณลักษณะหลัก
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- สร้าง Short URL จาก URL ยาว
+- แปลง Short URL เป็น QR Code
+- ดาวน์โหลด QR Code 
+- ติดตามจำนวนครั้งที่คนคลิก Short URL หรือเข้าไปที่ลิ้งนั้น
+- ดูประวัติการใช้งานของ URL
 
-## Customize configuration
+## วิธีการติดตั้ง
+1. ใช้คำสั่ง `npm install` เพื่อติดตั้ง Dependencies
+2. ใช้คำสั่ง `npm run start` เพิ่มรันเซิฟเวอร์ Node
+3. รันเซิร์ฟเวอร์ด้วยคำสั่ง `npm run dev`
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
