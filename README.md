@@ -12,7 +12,7 @@
 
 ## วิธีการติดตั้ง
 1. ใช้คำสั่ง `npm install` เพื่อติดตั้ง Dependencies
-2. ใช้คำสั่ง `npm run start`
+2. ใช้คำสั่ง `npm run start` เพิ่มรันเซิฟเวอร์ Node
 3. รันเซิร์ฟเวอร์ด้วยคำสั่ง `npm run dev`
 
 
