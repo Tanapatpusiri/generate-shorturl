@@ -58,21 +58,21 @@ app.get("/api/qrcode/:shortURL", async (req, res) => {
   try {
     const shortURL = await ShortURL.findOne({ shortURL: req.params.shortURL });
     if (!shortURL) {
-      return res.sendStatus(404); // หากไม่พบ shortURL ในฐานข้อมูลให้ส่งสถานะ 404 กลับ
+      return res.sendStatus(404); 
     }
 
-    // Generate the QR code
+    
     qr.toDataURL(shortURL.originalURL, (err, data_url) => {
       if (err) {
         console.error(err);
-        return res.sendStatus(500); // หากเกิดข้อผิดพลาดในการสร้าง QR code ให้ส่งสถานะ 500 กลับ
+        return res.sendStatus(500); 
       }
-      res.type("png"); // ตั้งค่าประเภทเนื้อหาของการตอบสนองเป็นรูปภาพ PNG
-      res.send(data_url); // ส่งรูปภาพ QR code กลับเป็นการตอบสนอง
+      res.type("png"); 
+      res.send(data_url); 
     });
   } catch (error) {
     console.error(error);
-    res.sendStatus(500); // หากมีข้อผิดพลาดในการดึงข้อมูลจากฐานข้อมูลให้ส่งสถานะ 500 กลับ
+    res.sendStatus(500); 
   }
 });
 
@@ -90,7 +90,7 @@ app.get("/api/qrcode/:shortURL", async (req, res) => {
 
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*"); // สามารถเปลี่ยน * เป็นโดเมนของเว็บที่คุณต้องการอนุญาต
+  res.setHeader("Access-Control-Allow-Origin", "*"); 
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS"
